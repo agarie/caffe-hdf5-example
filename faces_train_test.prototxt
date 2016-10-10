@@ -1,7 +1,7 @@
 name: "Faces"
 layer {
   name: "faces"
-  type: HDF5_DATA
+  type: "HDF5Data"
   top: "data"
   top: "label"
   include {
@@ -15,7 +15,7 @@ layer {
 
 layer {
   name: "faces"
-  type: HDF5_DATA
+  type: "HDF5Data
   top: "data"
   top: "label"
   include {
