@@ -25,13 +25,18 @@ def data_and_labels():
             i = i + 1
     return data, labels
 
+
+def save_dataset_with(filename, data, labels):
+    f = h5py.File(filename, "w")
+    f.create_dataset("data", data.shape, dtype="f8")
+    f.create_dataset("label", labels.shape, dtype="f8")
+    f["data"][:] = data.astype("f8")
+    f["label"][:] = labels.astype("f8")
+    f.close
+
 data, labels = data_and_labels()
+np.random.shuffle(data)
+np.random.shuffle(labels)
 
-f = h5py.File("faces.h5", "w")
-f.create_dataset("data", data.shape, dtype="f8")
-f.create_dataset("label", labels.shape, dtype="f8")
-
-f["data"][:] = data.astype("f8")
-f["label"][:] = labels.astype("f8")
-
-f.close()
+save_dataset_with("faces-train.h5", data[0:261], labels[0:261])
+save_dataset_with("faces-test.h5", data[261:], labels[261:])
