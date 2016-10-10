@@ -5,16 +5,16 @@ import numpy as np
 
 
 def encode_direction(direction):
-    return {"up": [1, 0, 0, 0],
-            "straight": [0, 1, 0, 0],
-            "left": [0, 0, 1, 0],
-            "right": [0, 0, 0, 1]
+    return {"up": 1,
+            "straight": 2,
+            "left": 3,
+            "right": 4
             }[direction]
 
 
 def data_and_labels():
     data = np.zeros((624, 960))
-    labels = np.zeros((624, 4))
+    labels = np.zeros((624, 1))
     with open("faces.csv", "r") as csvfile:
         reader = csv.reader(csvfile)
         i = 0
@@ -38,5 +38,5 @@ data, labels = data_and_labels()
 np.random.shuffle(data)
 np.random.shuffle(labels)
 
-save_dataset_with("faces-train.h5", data[0:261], labels[0:261])
-save_dataset_with("faces-test.h5", data[261:], labels[261:])
+save_dataset_with("faces-train.h5", data[0:260], labels[0:260])
+save_dataset_with("faces-test.h5", data[260:], labels[260:])
