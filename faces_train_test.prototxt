@@ -30,7 +30,7 @@ layer {
 layer {
   name: "ip1"
   type: "InnerProduct"
-  bottom: "pool2"
+  bottom: "data"
   top: "ip1"
   param {
     lr_mult: 1
