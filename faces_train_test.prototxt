@@ -7,7 +7,7 @@ layer {
   include {
     phase: TRAIN
   }
-  data_param {
+  hdf5_data_param {
     source: "faces_train.txt"
     batch_size: 64
   }
@@ -21,7 +21,7 @@ layer {
   include {
     phase: TEST
   }
-  data_param {
+  hdf5_data_param {
     source: "faces_test.txt"
     batch_size: 100
   }
