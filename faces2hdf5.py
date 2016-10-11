@@ -7,6 +7,7 @@ import numpy as np
 def encode_pixel(pixel_value):
     return float(pixel_value) / 256.0
 
+
 def encode_direction(direction):
     return {"up": 0,
             "straight": 1,
