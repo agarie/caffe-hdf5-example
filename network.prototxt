@@ -52,8 +52,8 @@ layer {
 }
 
 layer {
-  name: "relu1"
-  type: "ReLU"
+  name: "sigmoid"
+  type: "Sigmoid"
   bottom: "ip1"
   top: "ip1"
 }
