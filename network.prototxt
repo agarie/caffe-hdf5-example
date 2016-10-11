@@ -23,7 +23,7 @@ layer {
   }
   hdf5_data_param {
     source: "faces_test.txt"
-    batch_size: 100
+    batch_size: 364
   }
 }
 

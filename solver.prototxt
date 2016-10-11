@@ -1,7 +1,7 @@
 net: "network.prototxt"
 
-test_iter: 10
-test_interval: 10
+test_interval: 50
+test_iter: 1
 display: 1000
 
 # The base learning rate, momentum and the weight decay of the network.
