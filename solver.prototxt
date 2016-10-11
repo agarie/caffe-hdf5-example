@@ -1,4 +1,4 @@
-net: "faces_train_test.prototxt"
+net: "network.prototxt"
 
 test_iter: 10
 test_interval: 10
