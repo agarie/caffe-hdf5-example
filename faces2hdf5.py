@@ -4,11 +4,14 @@ import h5py
 import numpy as np
 
 
+def encode_pixel(pixel_value):
+    return float(pixel_value) / 256.0
+
 def encode_direction(direction):
-    return {"up": 1,
-            "straight": 2,
-            "left": 3,
-            "right": 4,
+    return {"up": 0,
+            "straight": 1,
+            "left": 2,
+            "right": 3,
             }[direction]
 
 
@@ -19,7 +22,7 @@ def data_matrix_from_csv(csv_filename):
         i = 0
         next(reader)
         for row in reader:
-            X[i, :] = [float(x) for x in row[0:-1]] + [encode_direction(row[-1])]
+            X[i, :] = [encode_pixel(x) for x in row[0:-1]] + [encode_direction(row[-1])]
             i = i + 1
     return X
 
